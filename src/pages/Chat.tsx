@@ -82,25 +82,26 @@ const Chat: React.FC = () => {
 
   return (
     <div className="h-full flex flex-col">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-6 gap-4 md:gap-0">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">语音助手</h1>
-          <p className="text-lg text-gray-600 mt-1">随时与我聊天，我会陪伴您</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">语音助手</h1>
+          <p className="text-base md:text-lg text-gray-600 mt-1">随时与我聊天，我会陪伴您</p>
         </div>
-        
-        <div className="flex items-center space-x-4">
-          <button className="btn-secondary">
-            <i className="fas fa-volume-up mr-2"></i>
-            语音播报
+
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <button className="btn-secondary text-sm md:text-base">
+            <i className="fas fa-volume-up mr-1 md:mr-2"></i>
+            <span className="hidden sm:inline">语音播报</span>
+            <span className="sm:hidden">播报</span>
           </button>
-          <button className="btn-secondary">
-            <i className="fas fa-cog mr-2"></i>
+          <button className="btn-secondary text-sm md:text-base">
+            <i className="fas fa-cog mr-1 md:mr-2"></i>
             设置
           </button>
         </div>
       </div>
 
-      <div className="flex-1 flex space-x-6">
+      <div className="flex-1 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-6 mb-16 md:mb-0">
         <div className="flex-1 flex flex-col">
           <div className="flex-1 bg-white rounded-2xl shadow-lg border border-gray-100 p-6 mb-4 overflow-hidden">
             <div className="h-full overflow-y-auto space-y-4">
@@ -164,7 +165,7 @@ const Chat: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-80">
+        <div className="w-full lg:w-80">
           <div className="card">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">快速回复</h3>
             <div className="space-y-2">

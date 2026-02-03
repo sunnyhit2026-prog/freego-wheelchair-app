@@ -44,19 +44,19 @@ const Home: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-0">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">欢迎回来！</h1>
-          <p className="text-lg text-gray-600 mt-2">今天是美好的一天，让我们一起出发吧</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">欢迎回来！</h1>
+          <p className="text-base md:text-lg text-gray-600 mt-1 md:mt-2">今天是美好的一天，让我们一起出发吧</p>
         </div>
-        
+
         <div className="card">
-          <div className="flex items-center space-x-4">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
-              <i className="fas fa-sun text-yellow-500 text-2xl"></i>
+          <div className="flex items-center space-x-3 md:space-x-4">
+            <div className="w-12 h-12 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center">
+              <i className="fas fa-sun text-yellow-500 text-xl md:text-2xl"></i>
             </div>
             <div>
-              <div className="text-2xl font-bold text-gray-900">{weatherInfo.temperature}</div>
+              <div className="text-xl md:text-2xl font-bold text-gray-900">{weatherInfo.temperature}</div>
               <div className="text-sm text-gray-600">{weatherInfo.condition}</div>
               <div className="text-xs text-gray-500">湿度 {weatherInfo.humidity} · {weatherInfo.wind}</div>
             </div>
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {quickActions.map((action, index) => (
           <div
             key={index}
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-0">
         <div className="card">
           <div className="flex items-center space-x-3 mb-4">
             <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">

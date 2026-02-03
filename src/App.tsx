@@ -12,6 +12,7 @@ import Settings from './pages/Settings';
 const App: React.FC = () => {
   const location = useLocation();
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -22,12 +23,12 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Header currentTime={currentTime} />
-      
-      <div className="flex-1 flex">
-        <Navigation />
-        
-        <main className="flex-1 p-6">
+      <Header currentTime={currentTime} onMenuToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+
+      <div className="flex-1 flex relative">
+        <Navigation isMobileMenuOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+
+        <main className="flex-1 p-3 md:p-6 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/chat" element={<Chat />} />
